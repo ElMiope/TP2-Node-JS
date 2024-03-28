@@ -17,17 +17,17 @@ app.post('/convert', (req, res) => {
 
 function convertToPLanguage(inputString) {
     const vocales = ['a', 'e', 'i', 'o', 'u'];
-    let result = '';
+    let resultado = '';
 
     for (let i = 0; i < inputString.length; i++) {
         const char = inputString[i];
-        result += char;
+        resultado += char;
         if (vocales.includes(char.toLowerCase())) {
-            result += 'p' + char.toLowerCase();
+            resultado += 'p' + char.toLowerCase();
         }
     }
 
-    return result;
+    return resultado;
 }
 
 const PORT = process.env.PORT || 3000;
